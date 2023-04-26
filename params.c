@@ -20,5 +20,5 @@ void init_params(params_t *params, va_list arg)
 	params->zero_flag = 0;
 	params->minus_flag = 0;
 	params->unsign = 0;
-	void(arg);
+	(void)arg;
 }

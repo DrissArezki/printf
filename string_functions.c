@@ -39,7 +39,7 @@ int print_rev(va_list arg, params_t *params)
 		for (length = 0; *str; str++)
 			length++;
 		str--;
-		for (; length > 0; len--, str--)
+		for (; length > 0; length--; str--)
 			ind = ind + _putchar(*str);
 	}
 	return (ind);
@@ -55,7 +55,7 @@ int print_rot13(va_list arg, params_t *params)
 {
 	int i, j;
 	int count = 0;
-	char list[] = "NOPQRSTUVWXYZABCDEFGHIJKLM     nopqrstuvwxyzabcdefghijklm";
+	char list[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	char *s = va_arg(arg, char *);
 	(void)params;
 
@@ -65,8 +65,10 @@ int print_rot13(va_list arg, params_t *params)
 	{
 		if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z'))
 		{
-			j = s[i] - 65;
-			count = count + _putchar(s[j]);
+			j = s[i] - 'A';
+			if (s[i] >= 'a' && s[i] <= 'z')
+				j = j + 26;
+			count = count + _putchar(list[j]);
 		}
 		else
 			count = count + _putchar(s[i]);

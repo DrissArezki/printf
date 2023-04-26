@@ -52,7 +52,7 @@ int print_uint(va_list arg, params_t *params)
 	else
 		i = (unsigned int)va_arg(arg, unsigned int);
 	params->unsign = 1;
-	return (print_number(convert(1, 100, UNSIGNED, params), params));
+	return (print_number(convert(i, 100, UNSIGNED, params), params));
 }
 
 /**

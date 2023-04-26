@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _PRINTF_H
+#define _PRINTF_H
 
 #include <stdio.h>
 #include <stdarg.h>
@@ -58,7 +58,7 @@ typedef struct spec
 {
 	char *spec;
 
-	int (func *)(va_list, params_t *);
+	int (*func)(va_list, params_t *);
 
 } spec_t;
 

@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int ind = 0;
 	va_list arg;
 	char *p, *start;
-	params_t params = PARAMS_INIT;
+	params_t params = INIT_CONFIG;
 
 	va_start(arg, format);
 
